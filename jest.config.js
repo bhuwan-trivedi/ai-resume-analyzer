@@ -1,0 +1,1 @@
+module.exports = {\n  testEnvironment: "node",\n  testMatch: ["**/tests/**/*.test.js"],\n  collectCoverageFrom: [\n    "server/**/*.js",\n    "!server/index.js",\n    "!node_modules/**",\n  ],\n  coverageThreshold: {\n    global: {\n      branches: 50,\n      functions: 50,\n      lines: 50,\n      statements: 50,\n    },\n  },\n};\n
