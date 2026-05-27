@@ -1,0 +1,1 @@
+{\n  "env": {\n    "node": true,\n    "es2021": true,\n    "jest": true\n  },\n  "extends": "eslint:recommended",\n  "parserOptions": {\n    "ecmaVersion": "latest",\n    "sourceType": "module"\n  },\n  "rules": {\n    "no-unused-vars": "warn",\n    "no-console": "warn",\n    "quotes": ["error", "double"],\n    "semi": ["error", "always"],\n    "indent": ["error", 2]\n  }\n}\n
