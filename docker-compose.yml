@@ -1,3 +1,4 @@
+ setup/complete-project-structure
 version: "3.8"
 
 services:
@@ -35,3 +36,6 @@ volumes:
 networks:
   ai-resume-network:
     driver: bridge
+
+version: "3.8"\n\nservices:\n  mongodb:\n    image: mongo:6.0\n    container_name: ai-resume-analyzer-db\n    ports:\n      - "27017:27017"\n    environment:\n      MONGO_INITDB_ROOT_USERNAME: admin\n      MONGO_INITDB_ROOT_PASSWORD: password\n    volumes:\n      - mongodb_data:/data/db\n    networks:\n      - ai-resume-network\n\n  app:\n    build: .\n    container_name: ai-resume-analyzer-app\n    ports:\n      - "5000:5000"\n    environment:\n      - NODE_ENV=production\n      - MONGODB_URI=mongodb://admin:password@mongodb:27017/ai-resume-analyzer\n    depends_on:\n      - mongodb\n    volumes:\n      - ./uploads:/app/uploads\n    networks:\n      - ai-resume-network\n\nvolumes:\n  mongodb_data:\n\nnetworks:\n  ai-resume-network:\n    driver: bridge\n
+ main
